@@ -21,7 +21,7 @@ The **Voiza Widget** is a customizable AI chat widget that allows users to inter
 
 1. **Add the Widget to Your HTML Page**
 
-   Simply include the widget's script in your HTML file.
+   Simply include the widget's script in your HTML file and add css in the head.
 
    ```html
    <head>
