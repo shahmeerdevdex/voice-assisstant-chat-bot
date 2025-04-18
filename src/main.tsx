@@ -1,10 +1,20 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import VocalAuraWidget from './VocalAuraWidget'
-import './index.css'
+import ReactDOM from "react-dom/client";
+import { FloatingWidget } from "./components/FloatingWidget";
+import "./index.css";
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <VocalAuraWidget/>
-  </StrictMode>,
-)
+// Mount function for global exposure
+function mount() {
+  const container = document.getElementById("voiza-widget");
+  if (!container) {
+    console.warn("Voiza: container #voiza-widget not found.");
+    return;
+  }
+
+  const root = ReactDOM.createRoot(container);
+  root.render(<FloatingWidget />);
+}
+
+// Expose on window for CDN users
+(window as any).Voiza = {
+  mount,
+};
