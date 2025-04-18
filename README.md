@@ -1,54 +1,50 @@
-# React + TypeScript + Vite
+# Voiza Widget - Documentation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📚 Voiza Widget Documentation
 
-Currently, two official plugins are available:
+The **Voiza Widget** is a customizable AI chat widget that allows users to interact with an AI agent through voice and text messages. You can integrate this widget into various platforms, including React, Next.js, and vanilla HTML.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🎨 Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Voice and Text** interactions with AI.
+- Customizable **theme** (light/dark mode).
+- Floating widget button that triggers the chat popup.
+- Easily embeddable in web applications via CDN or local build.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📦 Installation
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### CDN (For all platforms)
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+1. **Add the Widget to Your HTML Page**
+
+   Simply include the widget's script in your HTML file.
+
+   ```html
+   <head>
+     <link rel="stylesheet" href="https://voiza.netlify.app/voiza-widget.css" />
+   </head>
+   <div id="voiza-widget"></div>
+
+   <script>
+     window.voizaConfig = {
+       agentId: "YOUR_AGENT_ID", // Replace with your agent ID
+       theme: "dark", // Optional: "light" or "dark"
+     };
+   </script>
+
+   <script src="https://voiza.netlify.app/voiza-widget.iife.js"></script>
+   <script>
+     Voiza.mount(); // Mount the widget to the page
+   </script>
+   ```
+
+## 📦 Dependencies
+
+- **Tailwind CSS**: Used for styling.
+- **React**: For building the UI.
+- **Radix UI**: For modal and dialog management.
+- **Lucide Icons**: For icons.
